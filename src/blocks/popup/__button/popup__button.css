@@ -25,3 +25,7 @@
     line-height: 17px;
   }
 }
+
+.popup__content > .popup__button {
+  margin-top: 38px;
+}
