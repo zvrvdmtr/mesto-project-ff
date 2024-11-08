@@ -41,6 +41,9 @@ export function removeCard(cardId, cardRemovePopup) {
                 event.target.closest('.card').remove()
                 closeModal(cardRemovePopup)
             })
+            .catch((err) => {
+                console.log(err)
+            })
         })
     }
 }
@@ -54,12 +57,18 @@ export function likeCard(cardId) {
                 const number = event.target.closest('.card').querySelector('.card__like-number')
                 number.textContent = res.likes.length
             })
+            .catch((err) => {
+                console.log(err)
+            })
         } else {
             deleteLike(cardId)
             .then((res) => {
                 event.target.classList.remove('card__like-button_is-active')
                 const number = event.target.closest('.card').querySelector('.card__like-number')
                 number.textContent = res.likes.length
+            })
+            .catch((err) => {
+                console.log(err)
             })
         }
     }
